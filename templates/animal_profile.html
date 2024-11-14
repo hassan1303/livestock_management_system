@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Profile - Livestock Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="animal-profile-container">
+        <h2>Animal Profile: {{ animal.name }}</h2>
+        <p>Health Records: {{ animal.health_records }}</p>
+        <p>Productivity Records: {{ animal.productivity_records }}</p>
+        <a href="{% url 'edit_animal' animal.id %}">Edit Profile</a>
+    </div>
+</body>
+</html>

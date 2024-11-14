@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Livestock Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, {{ user.username }}</h2>
+        <div class="stats">
+            <p>Number of Animals: {{ animal_count }}</p>
+            <p>Health Summary: {{ health_summary }}</p>
+            <p>Productivity Summary: {{ productivity_summary }}</p>
+        </div>
+        <div class="actions">
+            <a href="{% url 'view_animal_profiles' %}">View Animal Profiles</a>
+            <a href="{% url 'manage_health' %}">Manage Health Records</a>
+            <a href="{% url 'manage_breeding' %}">Manage Breeding Schedule</a>
+            <a href="{% url 'manage_productivity' %}">Manage Productivity</a>
+            <a href="{% url 'generate_reports' %}">Generate Reports</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
